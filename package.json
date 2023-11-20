@@ -1,0 +1,25 @@
+{
+  "name": "crowdfunding-product-page",
+  "version": "1.0.0",
+  "description": "![Design preview for the Crowdfunding product page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "buildCSS": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "buildjs": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M0stafa123/crowdfunding-product-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M0stafa123/crowdfunding-product-page/issues"
+  },
+  "homepage": "https://github.com/M0stafa123/crowdfunding-product-page#readme",
+  "dependencies": {
+    "@types/node": "^20.9.2",
+    "typescript": "^5.2.2"
+  }
+}

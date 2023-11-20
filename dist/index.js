@@ -6,6 +6,10 @@ let back = document.querySelector(".back");
 let backClose = document.querySelector(".close-back");
 let selectModel = document.querySelector(".select-model");
 let cont = document.querySelectorAll(".Continue");
+let m = document.querySelectorAll(".select input");
+let money = document.querySelector(".money");
+let persons = document.querySelector(".persons");
+let prog = document.querySelector(".prog");
 let select = document.querySelectorAll(".select-model .select");
 let radios = document.querySelectorAll(".select-model [type = 'radio']");
 let selects = Array.from(select);
@@ -15,11 +19,17 @@ done.addEventListener("click", function () {
     complete.classList.add("hidden");
     document.body.classList.remove("dark");
 });
-cont.forEach((e) => {
+cont.forEach((e, i) => {
     e.addEventListener("click", function () {
         complete.classList.remove("hidden");
         document.body.classList.add("dark");
         selectModel.classList.add("hidden");
+        if (i - 1 != -1) {
+            money.innerHTML = (+money.innerHTML.split(",").join("") + +Array.from(m)[i - 1].value).toLocaleString();
+            prog.style.width = "81%";
+            console.log(prog.style.width);
+        }
+        persons.innerHTML = (+persons.innerHTML.split(",").join("") + 1).toLocaleString();
         radios.forEach((e) => {
             e.checked = false;
         });

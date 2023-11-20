@@ -923,16 +923,16 @@ main .body .ad {
     --tw-text-opacity: 1;
     color: hsl(0 0% 48% / var(--tw-text-opacity));
   }
-  & > div:last-of-type{
+  & > div:nth-of-type(2){
     display: flex;
   }
-  & > div:last-of-type{
+  & > div:nth-of-type(2){
     align-items: center;
   }
-  & > div:last-of-type{
+  & > div:nth-of-type(2){
     justify-content: space-between;
   }
-  & > div:last-of-type {
+  & > div:nth-of-type(2) {
     & p{
       font-size: 1.5rem;
       line-height: 2rem;
@@ -1127,7 +1127,7 @@ main article .ad .remaining {
   }
 }
 
-main article .select{
+.select{
   display: flex;
   height: 0px;
   flex-basis: 100%;
@@ -1140,13 +1140,13 @@ main article .select{
 }
 
 @media (min-width: 768px){
-  main article .select{
+  .select{
     flex-direction: row;
     align-items: center;
   }
 }
 
-main article .select {
+.select {
   & span{
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1160,7 +1160,7 @@ main article .select {
   }
 }
 
-main article .select div{
+.select > div{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1168,12 +1168,12 @@ main article .select div{
 }
 
 @media (min-width: 768px){
-  main article .select div{
+  .select > div{
     width: 50%;
   }
 }
 
-main article .select div {
+.select > div {
   & label{
     display: flex;
   }

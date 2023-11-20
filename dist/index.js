@@ -10,11 +10,22 @@ let m = document.querySelectorAll(".select input");
 let money = document.querySelector(".money");
 let persons = document.querySelector(".persons");
 let prog = document.querySelector(".prog");
-let select = document.querySelectorAll(".select-model .select");
+let select = document.querySelectorAll("article .select");
+let bodysel = document.querySelectorAll(".body .select");
 let radios = document.querySelectorAll(".select-model [type = 'radio']");
 let selects = Array.from(select);
 let complete = document.querySelector(".complete");
 let done = document.querySelector(".done");
+let reward = document.querySelectorAll(".reward");
+reward.forEach((e, i) => {
+    e.addEventListener("click", function () {
+        bodysel.forEach((e) => {
+            e.style.height = "0";
+        });
+        let select = e.parentElement.nextElementSibling;
+        select.style.height = "100px";
+    });
+});
 done.addEventListener("click", function () {
     complete.classList.add("hidden");
     document.body.classList.remove("dark");
@@ -24,12 +35,12 @@ cont.forEach((e, i) => {
         complete.classList.remove("hidden");
         document.body.classList.add("dark");
         selectModel.classList.add("hidden");
-        if (i - 1 != -1) {
-            money.innerHTML = (+money.innerHTML.split(",").join("") + +Array.from(m)[i - 1].value).toLocaleString();
-            prog.style.width = "81%";
-            console.log(prog.style.width);
-        }
+        money.innerHTML = (+money.innerHTML.split(",").join("") +
+            +e.previousElementSibling.lastElementChild.value).toLocaleString();
+        prog.style.width = "81%";
         persons.innerHTML = (+persons.innerHTML.split(",").join("") + 1).toLocaleString();
+        e.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.innerHTML = `${+e.parentElement.parentElement.previousElementSibling.firstElementChild
+            .firstElementChild.innerHTML - 1}`;
         radios.forEach((e) => {
             e.checked = false;
         });

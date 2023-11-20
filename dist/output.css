@@ -714,7 +714,7 @@ video {
 }
 
 .bg-img{
-  background-image: url('/images/image-hero-mobile.jpg');
+  background-image: url(../images/image-hero-mobile.jpg);
 }
 
 .bg-cover{
@@ -1275,11 +1275,6 @@ main article .ad:has(input:checked) .radio span{
   background-color: hsl(176 72% 28% / var(--tw-bg-opacity));
 }
 
-.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 @media (min-width: 768px){
   .md\:static{
     position: static;
@@ -1308,15 +1303,6 @@ main article .ad:has(input:checked) .radio span{
 
   .md\:w-96{
     width: 24rem;
-  }
-
-  .md\:-translate-x-1\/2{
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .md\:transform-none{
-    transform: none;
   }
 
   .md\:items-center{
@@ -1349,7 +1335,7 @@ main article .ad:has(input:checked) .radio span{
   }
 
   .md\:bg-imgdesk{
-    background-image: url('/images/image-hero-desktop.jpg');
+    background-image: url(../images/image-hero-desktop.jpg);
   }
 
   .md\:p-0{

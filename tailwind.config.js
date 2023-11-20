@@ -12,8 +12,8 @@ module.exports = {
         Commissioner: ["Commissioner", "sans serif"],
       },
       backgroundImage: {
-        img: "url('/images/image-hero-mobile.jpg')",
-        imgdesk: "url('/images/image-hero-desktop.jpg')",
+        img: "url(../images/image-hero-mobile.jpg)",
+        imgdesk: "url(../images/image-hero-desktop.jpg)",
       },
     },
   },

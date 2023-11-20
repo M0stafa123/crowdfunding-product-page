@@ -536,10 +536,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed{
-  position: fixed;
-}
-
 .absolute{
   position: absolute;
 }
@@ -621,10 +617,6 @@ video {
   height: 24rem;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
 .h-\[94vh\]{
   height: 94vh;
 }
@@ -691,10 +683,6 @@ video {
 
 .overflow-hidden{
   overflow: hidden;
-}
-
-.overflow-scroll{
-  overflow: scroll;
 }
 
 .rounded-full{
@@ -1022,6 +1010,11 @@ main article {
   @media (min-width: 768px){
     & .ad{
       padding: 1rem;
+    }
+  }
+  & .ad {
+    & p:not(.remaining){
+      width: 83.333333%;
     }
   }
   & p{

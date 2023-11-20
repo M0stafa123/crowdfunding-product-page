@@ -81,17 +81,16 @@ burger.addEventListener("click", function () {
 bookmark.addEventListener("click", function () {
     let span = document.querySelector(".bookmark span");
     let img = bookmark.firstElementChild;
-    if (span.classList.contains("w-0")) {
-        span.classList.remove("w-0");
-        span.style.width = "0px";
+    if (span.classList.contains("dull")) {
         if (window.innerWidth > 767) {
             span.style.width = "100px";
         }
+        span.classList.remove("dull");
         img.style.cssText =
             "filter:invert(64%) sepia(9%) saturate(2527%) hue-rotate(127deg) brightness(94%) contrast(94%);";
     }
     else {
-        span.classList.add("w-0");
+        span.classList.add("dull");
         span.style.width = "0px";
         img.style.cssText = "";
     }

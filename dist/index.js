@@ -17,6 +17,7 @@ let selects = Array.from(select);
 let complete = document.querySelector(".complete");
 let done = document.querySelector(".done");
 let reward = document.querySelectorAll(".reward");
+let remaining = document.querySelectorAll(".remaining");
 reward.forEach((e, i) => {
     e.addEventListener("click", function () {
         bodysel.forEach((e) => {
@@ -32,15 +33,24 @@ done.addEventListener("click", function () {
 });
 cont.forEach((e, i) => {
     e.addEventListener("click", function () {
-        complete.classList.remove("hidden");
-        document.body.classList.add("dark");
-        selectModel.classList.add("hidden");
-        money.innerHTML = (+money.innerHTML.split(",").join("") +
-            +e.previousElementSibling.lastElementChild.value).toLocaleString();
-        prog.style.width = "81%";
-        persons.innerHTML = (+persons.innerHTML.split(",").join("") + 1).toLocaleString();
-        e.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.innerHTML = `${+e.parentElement.parentElement.previousElementSibling.firstElementChild
-            .firstElementChild.innerHTML - 1}`;
+        var _a, _b, _c;
+        if (remaining[i].firstElementChild.innerHTML != "0" ||
+            !((_a = e.parentElement.parentElement.parentElement) === null || _a === void 0 ? void 0 : _a.classList.contains("o-f-s"))) {
+            if (+remaining[i].firstElementChild.innerHTML - 1 == 0) {
+                (_b = e.parentElement.parentElement.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("o-f-s");
+            }
+            complete.classList.remove("hidden");
+            document.body.classList.add("dark");
+            selectModel.classList.add("hidden");
+            money.innerHTML = (+money.innerHTML.split(",").join("") +
+                +e.previousElementSibling.lastElementChild.value).toLocaleString();
+            prog.style.width = "81%";
+            persons.innerHTML = (+persons.innerHTML.split(",").join("") + 1).toLocaleString();
+            remaining[i].firstElementChild.innerHTML = `${+remaining[i].firstElementChild.innerHTML - 1}`;
+        }
+        else {
+            (_c = e.parentElement.parentElement.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("o-f-s");
+        }
         radios.forEach((e) => {
             e.checked = false;
         });
